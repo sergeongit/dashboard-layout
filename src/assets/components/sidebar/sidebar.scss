@@ -1,0 +1,112 @@
+@import "src/assets/styles/variables";
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 306px;
+  height: 100%;
+  padding: 36px 28px 76px;
+  background: $bg-primary;
+  box-shadow: 0px 10px 60px 0px #E2ECF980;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 64px;
+
+    h1 {
+      margin-left: 8px;
+      font-size: 26px;
+      line-height: 39px;
+      font-weight: 600;
+      color: $black;
+    }
+
+    span {
+      margin-left: 4px;
+      font-size: 10px;
+      line-height: 15px;
+      font-weight: 400;
+      color: $gray;
+    }
+  }
+
+  &__routes {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__route {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 18px;
+    padding: 11px 8px 11px 11px;
+    background: transparent;
+    border-radius: 8px;
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+    span {
+      margin-left: 8px;
+      color: $text-secondary;
+    }
+    .arrow {
+      width: 16px;
+      height: 16px;
+      margin: 0 0 0 auto;
+    }
+    &:first-child {
+      margin-top: 0;
+      .arrow {
+        display: none;
+      }
+    }
+  }
+  &__route:hover {
+    background: $bg-btn-active;
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+    span {
+      color: $white;
+    }
+  }
+
+  &__user {
+    display: flex;
+    margin: auto 0 0;
+  }
+  &__avatar {
+    max-width: 42px;
+    max-height: 42px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 12px;
+    span {
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      color: $gray;
+    }
+    p {
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: 400;
+      color: $black;
+    }
+  }
+}

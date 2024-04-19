@@ -1,0 +1,15 @@
+doctype html
+html(lang="EN")
+    head
+        meta(charset="utf-8")
+        title Dashboard
+        link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet")
+        link(href="./src/favicon.ico" rel="icon")
+        link(href="./src/assets/styles/styles.scss" rel="stylesheet")
+
+        script(async)
+            include /src/assets/js/main.js
+    body
+        main.main-content
+            include /src/assets/components/sidebar/sidebar
+            include /src/assets/components/main/main

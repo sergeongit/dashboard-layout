@@ -1,0 +1,50 @@
+- const tableTitle = ['Customer Name', 'Company', 'Phone Number', 'Email', 'Country', 'Status']
+- const tableData =  [
+-   {name: 'Jane Cooper', company: 'Microsoft', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'USA', status: 'active'},
+-   {name: 'Floyd Miles', company: 'Yahoo', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'Brazil', status: 'inactive'},
+-   {name: 'Ronald Richards', company: 'Google', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'Curaçao', status: 'inactive'},
+-   {name: 'Marvin McKinney', company: 'Microsoft', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'Iran', status: 'active'},
+-   {name: 'Jerome Bell', company: 'Yahoo', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'USA', status: 'active'},
+-   {name: 'Kathryn Murphy', company: 'Microsoft', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'Curaçao', status: 'active'},
+-   {name: 'Jane Cooper', company: 'Yahoo', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'Iran', status: 'active'},
+-   {name: 'Jacob Jones', company: 'Google', phone: '(225) 555-0118', email: 'jane@microsoft.com', country: 'Brazil', status: 'inactive'}
+- ]
+
+section.customers
+    p.customers__greet-title Hello Evano 👋🏼,
+    |
+    section.customers__main-box
+        .customers__header
+            .customers__header-title
+                h2 All Customers
+                |
+                span Active Members
+            .customers__header-search
+                .icon
+                    include /src/assets/img/search.svg
+                input(type="search" placeholder="Search")
+
+        .customers__table
+            .customers__table-header
+                    each name in tableTitle
+                        span= name
+
+            .customers__table-users
+                each user in tableData
+                    .customers__user-credentials
+                        span= user.name
+                        span= user.company
+                        span= user.phone
+                        span= user.email
+                        span= user.country
+                        span(class=(user.status === 'active') ? 'active' : 'inactive')= user.status
+
+            .customers__table-footer
+                span.data-info Showing data 1 to 8 of 256K entries
+                |
+                .customers__paginator
+                    button
+                        include /src/assets/img/chevron.svg
+                    button.-active 1
+                    button
+                        include /src/assets/img/chevron.svg
